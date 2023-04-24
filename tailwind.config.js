@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+/*eslint-env node*/
+const defaultTheme = require("tailwindcss/defaultTheme")
 
 export default {
 	content: [
@@ -7,6 +9,10 @@ export default {
 	],
 	theme: {
 		extend: {
+			fontFamily: {
+				sans: ["Inter", ...defaultTheme.fontFamily.sans],
+				mono: ["RobotoMono", ...defaultTheme.fontFamily.mono],
+			},
 		},
 	},
 	plugins: [],
