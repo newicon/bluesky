@@ -4,7 +4,10 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-	<div class="bg-gray-100 absolute inset-0">
+	<!-- The inner app div screen 
+	-    this stays fixed to the window and should always expand to fill the screen
+    -    this prevents bounding apps - and pinch zoom events (touch-action:neon)  -->
+	<div class="bg-gray-100 absolute inset-0 ">
 	
 		<header>
 			<img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />

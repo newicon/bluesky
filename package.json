@@ -14,11 +14,17 @@
 		"lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
 	},
 	"dependencies": {
+		"@capacitor/android": "^4.7.3",
+		"@capacitor/core": "^4.7.3",
+		"@capacitor/ios": "^4.7.3",
+		"@capacitor/motion": "^4.0.2",
+		"@capacitor/share": "^4.1.1",
 		"pinia": "^2.0.32",
 		"vue": "^3.2.47",
 		"vue-router": "^4.1.6"
 	},
 	"devDependencies": {
+		"@capacitor/cli": "^4.7.3",
 		"@rushstack/eslint-patch": "^1.2.0",
 		"@types/jsdom": "^21.1.0",
 		"@types/node": "^18.14.2",
