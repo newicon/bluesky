@@ -5,6 +5,7 @@ import HomeView from '../views/HomeView.vue'
 enum RouteNames {
 	Home = "Home",
 	About = "About",
+	Component = "Component"
 }
 interface RouteInterface {
 	[key: string]: RouteRecordRaw
@@ -15,6 +16,12 @@ const routes: RouteInterface = {
 		path: '/',
 		name: RouteNames.Home,
 		component: HomeView,
+		meta: { transition: 'slide' },
+	},
+	[RouteNames.Component]: {
+		path: '/component',
+		name: RouteNames.Component,
+		component: () => import('../views/ComponentView.vue'),
 		meta: { transition: 'slide' },
 	},
 	[RouteNames.About]: {
@@ -29,23 +36,7 @@ const routes: RouteInterface = {
 }
 const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
-	routes: [
-		{
-			path: '/',
-			name: RouteNames.Home,
-			component: HomeView,
-			meta: { transition: 'slide' },
-		},
-		{
-			path: '/about',
-			name: RouteNames.About,
-			// route level code-splitting
-			// this generates a separate chunk (About.[hash].js) for this route
-			// which is lazy-loaded when the route is visited.
-			component: () => import('../views/AboutView.vue'),
-			meta: { transition: 'slide' },
-		}
-	]
+	routes: Object.values(routes) 
 })
 
 // router.afterEach((to, from) => {

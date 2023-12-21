@@ -2,7 +2,7 @@
 	<!-- 
 	| The inner app div screen 
 	| this stays fixed to the window and should always expand to fill the screen
-	| this prevents bounding apps - and pinch zoom events (touch-action:neon)
+	| this prevents bounding apps - and pinch zoom events (touch-action:none)
 	`-->
 	<div class=" flex flex-col h-full absolute inset-0">
 		<!-- (flex child) header-->
@@ -12,7 +12,7 @@
 		
 		<!-- (flex child) will grow to fill space -->
 		<div class="relative grow">
-			<slot />
+			<slot name="default" />
 		</div>
 
 		<!-- (flex child) nav will be pushed to the bottom -->

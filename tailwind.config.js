@@ -9,10 +9,19 @@ export default {
 	],
 	theme: {
 		extend: {
+
 			fontFamily: {
-				sans: ["Inter", ...defaultTheme.fontFamily.sans],
+				sans: ["Outfit","Inter", ...defaultTheme.fontFamily.sans],
 				mono: ["RobotoMono", ...defaultTheme.fontFamily.mono],
 			},
+
+			colors: {
+				'bg': 'var(--color-bg)',
+				'gray': {
+					900 : 'rgb(var(--color-gray-900) / <alpha-value>)'
+				},
+				'bg-accent': '#ccc'
+			}
 		},
 	},
 	plugins: [],

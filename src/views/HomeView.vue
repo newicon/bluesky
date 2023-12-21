@@ -1,5 +1,29 @@
+<template>
+	<main class="h-[400px]">
+		<div class="p-5">
+			<H1 class="text-4xl font-semibold">Newicon's Library Blue Sky</H1>
+			<p>Our list of awesome components</p>
+			<div class="uppercase">Elements</div>
+		</div>
+		<div class="flex gap-5 pb-5 px-5 overflow-x-auto flex-nowrap">
+			<div class="bg-gray-200 p-10 w-[200px] rounded-xl ">
+				Button
+			</div>
+			<div class="bg-gray-200 p-10 w-[200px] rounded-xl ">
+				Button
+			</div>
+			<div class="bg-gray-200 p-10 w-[200px] rounded-xl ">
+				Button
+			</div>
+			<a href="/component" class="bg-gray-200 p-10 w-[200px] rounded-xl">
+				Component page
+			</a>
+		</div>
+		
+	</main>
+</template>
+
 <script setup lang="ts">
-import HelloWorld from '../components/HelloWorld.vue'
 
 import type { PluginListenerHandle } from '@capacitor/core';
 
@@ -39,12 +63,3 @@ const onShareClick = async () => {
 	});
 }
 </script>
-
-<template>
-	<main class="h-[400px]">
-		<HelloWorld msg="Hello There Chuck" />
-		<button @click="onShareClick" class="text-lg rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">SHARE</button>
-		HELLO?
-		<button @click="onMotionClick" class="text-lg rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Motion</button>
-	</main>
-</template>

@@ -2,13 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+/* use theme() function to access color styles */
+
 @layer base {
+
+	:root {
+		--color-bg: #fff;
+		/* --color-primary: 255 115 179; */
+		/* --color-secondary: 111 114 185; */
+		--color-gray-900: 24 24 27
+	}
+
 	html,
 	body {
-		position: fixed;
-		overflow: hidden;
+		/* position: fixed; */
+		/* overflow: hidden; */
 		-webkit-font-smoothing: antialiased;
-		position: fixed;
+		/* position: fixed; */
 		width: 100vw;
 		height: 100vh;
 		max-width: 100%;
@@ -24,6 +34,7 @@
 		margin: 0;
 		padding: 0;
 		-webkit-tap-highlight-color: transparent;
+		background: theme('colors.bg')
 	}
 	/* Prevents an effect on ios after long pressing on 
 		an anchor tag you can drag it around */
