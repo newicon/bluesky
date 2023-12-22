@@ -10,7 +10,14 @@
 		--color-bg: #fff;
 		/* --color-primary: 255 115 179; */
 		/* --color-secondary: 111 114 185; */
-		--color-gray-900: 24 24 27
+		
+		--color-primary: var(--color-brand-500);
+		--color-secondary: 255 255 255;
+
+		--color-brand-500: 41 112 255;
+
+		--color-gray-900: 24 24 27;
+
 	}
 
 	html,

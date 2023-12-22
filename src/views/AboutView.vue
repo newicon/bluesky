@@ -13,19 +13,24 @@
 			<button type="submit">Update Props</button>
 		</form>
 		<component :is="targetComponent" v-model="propValues['modelValue']" v-bind="propValues" />
-	</div>
 
-	<pre>{{componentProps}}</pre>
+		<h2>emits</h2>
+		<div v-for="event in targetComponent.emits">{{event}}</div>
+
+		<pre>{{componentProps}}</pre>
+
+		<button @click="debugLog" >DEBUG</button>
+	</div>
 </template>
 
 <script>
 import { markRaw } from 'vue';
-import BsRange from '@/components/BsRange.vue'
+import BuiRange from '@/components/BuiRange.vue'
 
 export default {
 	data() {
 		return {
-			targetComponent: markRaw(BsRange),
+			targetComponent: markRaw(BuiRange),
 			propValues: {},
 		}
 	},
@@ -56,6 +61,9 @@ export default {
 			// This function can be used to handle any additional logic when props are updated
 			console.log('Props updated:', this.propValues);
 			// Since propValues is already bound to your inputs, they automatically update the component
+		},
+		debugLog() {
+			console.log(this.targetComponent)
 		}
 	}
 };

@@ -4,14 +4,14 @@
 	| this stays fixed to the window and should always expand to fill the screen
 	| this prevents bounding apps - and pinch zoom events (touch-action:none)
 	`-->
-	<div class=" flex flex-col h-full absolute inset-0">
+	<div class=" flex flex-col absolute inset-0 h-dvh">
 		<!-- (flex child) header-->
 		<div>
 			<slot name="header"/>
 		</div>
 		
 		<!-- (flex child) will grow to fill space -->
-		<div class="relative grow">
+		<div class="relative grow overflow-scroll">
 			<slot name="default" />
 		</div>
 

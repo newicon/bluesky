@@ -14,6 +14,7 @@
 		<div class=" absolute z-10 w-full bg-primary bg-black progress-bar rounded-full overflow-hidden" :style="progressBarWrapper ">
 			<div class="absolute top-0 z-20 w-full bg-blue-500 progress-bar" :style=" progressBar " />
 		</div>
+		<slot></slot>
 	</div>
 </template>
 

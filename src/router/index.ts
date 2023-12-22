@@ -2,16 +2,16 @@ import { createRouter, createWebHistory } from 'vue-router'
 import type { RouteRecordRaw } from 'vue-router';
 import HomeView from '../views/HomeView.vue'
 
-enum RouteNames {
+export enum RouteNames {
 	Home = "Home",
 	About = "About",
 	Component = "Component"
 }
-interface RouteInterface {
+export interface RouteInterface {
 	[key: string]: RouteRecordRaw
 }
 
-const routes: RouteInterface = {
+export const Routes = {
 	[RouteNames.Home]: {
 		path: '/',
 		name: RouteNames.Home,
@@ -36,7 +36,7 @@ const routes: RouteInterface = {
 }
 const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
-	routes: Object.values(routes) 
+	routes: Object.values(Routes) 
 })
 
 // router.afterEach((to, from) => {
