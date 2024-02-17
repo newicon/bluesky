@@ -7,6 +7,9 @@
 @layer base {
 
 	:root {
+		--color-white: 255 255 255;
+		--color-black: 0 0 0;
+
 		--color-bg: #fff;
 		/* --color-primary: 255 115 179; */
 		/* --color-secondary: 111 114 185; */
@@ -14,7 +17,10 @@
 		--color-primary: var(--color-brand-500);
 		--color-secondary: 255 255 255;
 
+		--color-brand-100: 209 224 255;
 		--color-brand-500: 41 112 255;
+		--color-brand-700: 0 78 235;
+
 
 		--color-gray-900: 24 24 27;
 

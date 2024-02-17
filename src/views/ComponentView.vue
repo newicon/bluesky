@@ -9,7 +9,7 @@
 		</div>
 
 		<div class="shadow-black-xl rounded-[13px] ">
-			<div ref="card2" style="--x: 347.5px; --y: 134.75px; --54fc9276: rgb(var(--color-primary-DEFAULT)); --2c046616: rgb(var(--color-primary-DEFAULT));" class="
+			<div ref="card2" style="--x: 347.5px; --y: 134.75px;--shine: rgb(var(--color-primary-DEFAULT));" class="
 			relative group isolate rounded-xl background-gradient
 			ring-1
 			ring-gray-800
@@ -31,7 +31,7 @@
 		</div>
 
 		<div class="shadow-black-xl rounded-xl">
-			<div ref="card3" style="--x: 347.5px; --y: 134.75px; --54fc9276: rgb(var(--color-primary-DEFAULT)); --2c046616: rgb(var(--color-primary-DEFAULT));" class="
+			<div ref="card3" style="--x: 347.5px; --y: 134.75px; --shine: rgb(var(--color-primary-DEFAULT));" class="
 			relative  group isolate rounded-xl background-gradient  ring-gray-800
 			before:block 
 			before:absolute 
@@ -53,7 +53,7 @@
 
 		<div ref="card4"
 			class="block background-gradient-new p-[2px] rounded-[13px] shadow-black-xl" 
-			style="--x: 347.5px; --y: 134.75px; --54fc9276: rgb(var(--color-primary-DEFAULT)); --2c046616: rgb(var(--color-primary-DEFAULT));">
+			style="--x: 347.5px; --y: 134.75px; --shine: rgb(var(--color-primary-DEFAULT));">
 			<div class="relative  group isolate rounded-xl ring-gray-800 bg-gray-900 bg-opacity-90
 			flex-1 flex flex-col col-span-8 @container">
 				<div class="text-white p-20 overflow-hidden flex-1 flex flex-col pt-6 rounded-xl">
@@ -63,12 +63,30 @@
 					<p>HELLO</p>
 				</div>
 			</div>
-
+			
 		</div>
+
+		<div data-shine ref="card5"
+			class="block background-gradient-new p-[2px] rounded-[13px] shadow-black-xl" 
+			style="--x: 347.5px; --y: 134.75px; --shine: rgb(var(--color-primary-DEFAULT));">
+			<div class="relative  group isolate rounded-xl ring-gray-800 bg-gray-900 bg-opacity-90
+			flex-1 flex flex-col col-span-8 @container">
+				<div class="text-white p-20 overflow-hidden flex-1 flex flex-col pt-6 rounded-xl">
+					<p>This Example creates a radial background with updating X and Y on a psuedo before element placed in the background - then changes the card background color to introduce transparency on hover - showing the radial glow and creating a nice border highlight. </p>
+					<p>HELLO</p>
+					<p>HELLO</p>
+					<p>HELLO</p>
+				</div>
+			</div>
+			
+		</div>
+
+		<ShinyCard></ShinyCard>
 		
 	</div>
 </template>
 <script setup lang="ts">
+import ShinyCard from '@/components/ShinyCard.vue';
 import { ref, onMounted, onUnmounted, computed, watch } from 'vue'
 const card = ref(null);
 const color = ref('64 124 255')
@@ -90,8 +108,8 @@ const handleMouseMoveBody = (event) => {
 	const rect = card.value.getBoundingClientRect();
 
 	// Calculate mouse position relative to the element
-	const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
-	const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+	const scrollLeft = window.scrollX || document.documentElement.scrollLeft;
+	const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
 	const x = event.pageX - (rect.left + scrollLeft);
 	const y = event.pageY - (rect.top + scrollTop);
@@ -106,6 +124,7 @@ const handleMouseMoveBody = (event) => {
 const card2 = ref(null);
 const card3 = ref(null);
 const card4 = ref(null);
+const card5 = ref(null);
 
 onMounted(() => {
 	document.body.addEventListener('mousemove', handleMouseMoveBody)
@@ -113,7 +132,9 @@ onMounted(() => {
 	// Assuming 'element' is the target element
 	// const element = card2.value
 
-	const elements = [card2.value, card3.value, card4.value]
+
+
+	const elements = [card2.value, card3.value, card4.value, card5.value]
 
 	document.body.addEventListener('mousemove', function (event) {
 
@@ -147,12 +168,12 @@ onUnmounted(() => {
 }
 
 .background-gradient:before {
-	background: radial-gradient(250px circle at var(--x) var(--y), var(--2c046616) 0, transparent 100%);
+	background: radial-gradient(250px circle at var(--x) var(--y), var(--shine) 0, transparent 100%);
 	will-change: background;
 }
 
 .background-gradient-new {
-	background: radial-gradient(250px circle at var(--x) var(--y), var(--2c046616) 0, #1C1C1C 100%);
+	background: radial-gradient(250px circle at var(--x) var(--y), var(--shine) 0, #1C1C1C 100%);
 	will-change: background;
 }
 

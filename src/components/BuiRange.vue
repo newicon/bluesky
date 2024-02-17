@@ -11,8 +11,8 @@
 		:max="max"
 		:step="step"
 		:disabled="disabled">
-		<div class=" absolute z-10 w-full bg-primary bg-black progress-bar rounded-full overflow-hidden" :style="progressBarWrapper ">
-			<div class="absolute top-0 z-20 w-full bg-blue-500 progress-bar" :style=" progressBar " />
+		<div class=" absolute z-10 w-full bg-black progress-bar rounded-full overflow-hidden" :style="progressBarWrapper ">
+			<div class="absolute top-0 z-20 w-full bg-primary progress-bar" :style=" progressBar " />
 		</div>
 		<slot></slot>
 	</div>
